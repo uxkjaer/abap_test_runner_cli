@@ -4,7 +4,8 @@
   "description": "Abap test runner command line tool",
   "main": "out/bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "node ."
   },
   "repository": {
     "url": "https://github.com/uxkjaer/abap_test_runner_cli"
