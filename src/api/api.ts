@@ -34,7 +34,7 @@ export class Runner {
         await this.client.login();
         try {
 
-            const url = args.abap_package ? `/sap/bc/adt/repository/informationsystem/virtualfolders?selection=package%3a${encodeURIComponent(args.abap_package)}` : `/sap/bc/adt/oo/classes/${args.abap_class}`
+            const url = process.env.ABAP_PACKAGE || args.ABAP_PACKAGE ? `/sap/bc/adt/repository/informationsystem/virtualfolders?selection=package%3a${encodeURIComponent(process.env.ABAP_PACKAGE ||args.ABAP_PACKAGE)}` : `/sap/bc/adt/oo/classes/${process.env.ABAP_CLASS || args.ABAP_CLASS}`
             const resUnit = await this.client.runUnitTest(url)
             return resUnit;
         } catch (e) {
