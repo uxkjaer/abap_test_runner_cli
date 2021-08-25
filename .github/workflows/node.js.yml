@@ -25,12 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Setup Tailscale
-      id: tailscale
-      uses: tailscale/tailscale-deploy-github@main
-      with:
-        authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-        version: 1.7.359
+    - name: Tailscale
+      uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
     - run: npm install
     - run: npm run build
     - run: npm test
