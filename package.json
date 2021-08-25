@@ -20,13 +20,13 @@
     "abap-adt-api": "^3.0.0",
     "asciify-image": "^0.1.7",
     "chalk": "^4.1.2",
-    "ts-command-line-args": "^2.1.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "ts-command-line-args": "^2.1.0"
   },
   "devDependencies": {
     "@types/figlet": "^1.5.4",
     "@types/node-fetch": "^2.5.12",
-    "@types/request-promise": "^4.1.48"
-    
+    "@types/request-promise": "^4.1.48",
+    "typescript": "^4.3.5"
   }
 }
