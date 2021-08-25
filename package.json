@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "url": ""
+    "url": "https://github.com/uxkjaer/abap_test_runner_cli"
   },
   "bin": {
     "abaptr": "./out/bin/index.js"
