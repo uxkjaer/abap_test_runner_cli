@@ -1,12 +1,31 @@
 {
   "name": "abap_test_runner_cli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.4",
+  "description": "Abap test runner command line tool",
+  "main": "out/bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "url": ""
+  },
+  "bin": {
+    "abaptr": "./out/bin/index.js"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "abap-adt-api": "^3.0.0",
+    "asciify-image": "^0.1.7",
+    "chalk": "^4.1.2",
+    "ts-command-line-args": "^2.1.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.4",
+    "@types/node-fetch": "^2.5.12",
+    "@types/request-promise": "^4.1.48"
+    
+  }
 }
