@@ -20,8 +20,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Tailscale
-      uses: tailscale/github-action@v1
+    - name: Setup Tailscale
+      uses: tailscale/github-action@main
       with:
         authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
     - uses: actions/checkout@v2
