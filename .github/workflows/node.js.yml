@@ -10,10 +10,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  connect:
     runs-on: ubuntu-latest
-
+    steps:
+      - name: Tailscale
+        uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+  build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
