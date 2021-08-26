@@ -31,6 +31,9 @@ jobs:
       with:
         authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
     - run: tailscale status
+    - run: MACHINE_IP="$(tailscale ip -6 CUBI5)"
+    - run: echo $MACHINE_IP
+    - run: ping $MACHINE_IP
     - run: npm install
     - run: npm run build
     - run: npm test
