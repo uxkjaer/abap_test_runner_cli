@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "abap-adt-api": "^3.0.0",
-    "asciify-image": "^0.1.7",
+    "asciify-image": "github:uxkjaer/asciify-image",
     "chalk": "^4.1.2",
     "dotenv": "^10.0.0",
     "ts-command-line-args": "^2.1.0"
