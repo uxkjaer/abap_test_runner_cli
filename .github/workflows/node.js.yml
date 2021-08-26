@@ -28,7 +28,7 @@ jobs:
     - run: tailscale status
     - run: ADT_URL=$(tailscale ip -4 cubi5):50001
       shell: bash {0}
-    - run: echo $ADT_URL
+    - run: echo "URL IS $ADT_URL"
       shell: bash {0}
     - run: npm install
     - run: npm run build
