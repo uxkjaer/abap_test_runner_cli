@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+import * as core from '@actions/core';
 import chalk from "chalk";
 import { Runner } from "../api/api";
 import { CommandLineOption, parse } from "ts-command-line-args";
@@ -102,7 +102,7 @@ asciifyImage(
             }
         } catch (error) {
             console.log(chalk.red(error));
-            throw error
+            core.setFailed(chalk.red(error));
         }
     }
 );
