@@ -13,11 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: test
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     
     - uses: actions/checkout@v2
@@ -32,7 +27,9 @@ jobs:
         authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
     - run: tailscale status
     - run: ADT_URL=$(tailscale ip -4 cubi5):50001
+      shell: bash {0}
     - run: echo $ADT_URL
+      shell: bash {0}
     - run: npm install
     - run: npm run build
     - run: npm test
