@@ -33,6 +33,7 @@ jobs:
         echo ADT_USER =${{ secrets.ADT_USER }} >> .env
         echo ADT_PASS =${{ secrets.ADT_PASS }} >> .env
         echo ABAP_PACKAGE =${{ secrets.ABAP_PACKAGE }} >> .env
+    - run: cat .env
     - run: npm install
     - run: npm run build
     - run: npm test
