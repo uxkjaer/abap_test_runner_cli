@@ -102,6 +102,7 @@ asciifyImage(
             }
         } catch (error) {
             console.log(chalk.red(error));
+            throw error
         }
     }
 );
