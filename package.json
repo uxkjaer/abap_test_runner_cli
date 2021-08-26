@@ -4,8 +4,9 @@
   "description": "Abap test runner command line tool",
   "main": "out/bin/index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "node ."
+    "build": "tsc && npm run copy-files",
+    "test": "node .",
+    "copy-files": "cp -rf ./src/assets/ ./out/assets"
   },
   "repository": {
     "url": "https://github.com/uxkjaer/abap_test_runner_cli"
