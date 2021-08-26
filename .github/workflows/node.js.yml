@@ -26,10 +26,10 @@ jobs:
       with:
         authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
     - run: tailscale status
-    - run: ADT_URL=$(tailscale ip -4 cubi5):50001
-      shell: bash {0}
-    - run: echo "URL IS $ADT_URL"
-      shell: bash {0}
+    - name: create env file
+      run: |
+        touch .env
+        echo ADT_URL =$(tailscale ip -4 cubi5):50001 >> .env
     - run: npm install
     - run: npm run build
     - run: npm test
