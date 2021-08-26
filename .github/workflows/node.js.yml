@@ -31,8 +31,8 @@ jobs:
       with:
         authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
     - run: tailscale status
-    - run: MACHINE_IP="$(tailscale ip -4 cubi5)"
-    - run: echo $MACHINE_IP
+    - run: export ADT_URL="$(tailscale ip -4 cubi5)"
+    - run: echo $ADT_URL
     - run: npm install
     - run: npm run build
     - run: npm test
