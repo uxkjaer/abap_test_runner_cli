@@ -35,5 +35,5 @@ jobs:
     - run: echo $ADT_URL
     - run: npm install
     - run: npm run build
-    - run: pwd
+    - run: ls
     - run: npm test
