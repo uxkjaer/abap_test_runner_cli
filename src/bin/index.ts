@@ -82,9 +82,11 @@ asciifyImage(
                         method.alerts.forEach((alert) => {
                             alert.details.forEach((detail, index) => {
                                 let color: chalk.Chalk;
+                                let hasErrors: boolean
                                 switch (index) {
                                     case 1:
                                         color = chalk.redBright;
+                                        hasErrors = true
                                         break;
 
                                     default:
@@ -92,16 +94,22 @@ asciifyImage(
                                         break;
                                 }
                                 console.log(color(detail));
+                                if (hasErrors) {
+                                throw "Test failed"
+                                }
+                                else {
+                                    console.log(chalk.bold.green("All unit tests passed!"));
+                                }
                             });
                         });
                     });
                 });
             } else {
-                console.log(chalk.bold.green("All unit tests passed!"));
+                
                 process.exit(0)
             }
         } catch (error) {
-            console.log(chalk.red(error.message));
+            console.log(chalk.red(error));
             process.exit(1)
         }
     }
