@@ -38,7 +38,7 @@ export class Runner {
             const resUnit = await this.client.runUnitTest(url)
             return resUnit;
         } catch (e) {
-            return e.message;
+            throw e;
         }
     }
 }

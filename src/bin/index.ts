@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import * as core from '@actions/core';
 import chalk from "chalk";
 import { Runner } from "../api/api";
 import { CommandLineOption, parse } from "ts-command-line-args";
@@ -99,10 +98,11 @@ asciifyImage(
                 });
             } else {
                 console.log(chalk.bold.green("All unit tests passed!"));
+                process.exit(0)
             }
         } catch (error) {
-            console.log(chalk.red(error));
-            core.setFailed(chalk.red(error));
+            console.log(chalk.red(error.message));
+            process.exit(1)
         }
     }
 );

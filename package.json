@@ -1,6 +1,6 @@
 {
   "name": "abap_test_runner_cli",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "Abap test runner command line tool",
   "main": "out/bin/index.js",
   "scripts": {
